@@ -1,0 +1,29 @@
+---
+
+# A minimal Kubernetes 'Job' spec for the loader image.
+# The image runs ('tail -f /dev/null') to provide a container of
+# database 'dumps' and a psql client to allow convenient importing
+# into new server databases.
+
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: pg-loader
+  namespace: im-infra
+spec:
+  template:
+    spec:
+      serviceAccountName: im-infra
+      restartPolicy: Never
+      containers:
+      - name: pg-loader
+        image: informaticsmatters/postgres-loader:latest
+        command:
+        - tail
+        - -f
+        - /dev/null
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 500m
+            memory: 128Mi
