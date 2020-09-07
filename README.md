@@ -15,11 +15,11 @@ commands issued to load the data into the new DB.
 
 From within the container you can then decrypt the dumps...
 
-    # gpg --output squonk-20200805.sql.gz --decrypt squonk-20200805.sql.gz.gpg
+    # unzip squonk-20200907.sql.zip
 
 And then load into the im-infra database...
 
-    # gunzip -c squonk-20200805.sql.gz | \
+    # cat squonk-20200907.sql | \
         psql --set ON_ERROR_STOP=on --host=database --username=<uaername> squonk
 
 When done, delete the loader Job/Pod...

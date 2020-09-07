@@ -1,10 +1,10 @@
 FROM alpine:3.12.0
 
 RUN apk add \
-        gnupg \
-        postgresql-client=12.3-r2
+        zip \
+        postgresql-client=12.4-r0
 
 WORKDIR /dumps
-COPY dumps/*.gpg ./
+COPY dumps/*.zip ./
 
 ENTRYPOINT ["/usr/bin/env"]
