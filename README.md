@@ -4,7 +4,7 @@ taken from one database using [pg_dump] to a (Kubernetes-based) new database.
 
 ## Usage
 Build the container with the database dumps in the `dumps` directory
-(ideally encrypted with gpg). Then, when built and pushed the image can be run
+(encrypted with zip). Then, when built and pushed the image can be run
 as a Kubernetes Job using the simple Job template in the repo and psql
 commands issued to load the data into the new DB.
 

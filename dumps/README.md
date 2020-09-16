@@ -1,6 +1,12 @@
 # dumps
-A directory for `.gpg` files. These are copied into the container
+A directory for `.zip` files. These are copied into the container
 but are protected from being pushed to GitHub. So - put your
-`.gpg` files here and then build and push the image to use it.
+`.zip` files here and then build and push the image to use it.
 
+Typical compression command: -
+
+    $ zip -er squonk-20200916.sql.zip squonk-20200916.sql
+    Enter password:
+    [...]
+    
 ---
