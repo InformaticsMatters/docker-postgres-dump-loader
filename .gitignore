@@ -1,3 +1,4 @@
 .idea/
+dumps/*.gz
 dumps/*.zip
 dumps/*.sql
